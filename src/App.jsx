@@ -4,7 +4,7 @@ import FeedbackButtons from "./components/FeedbackButtons";
 import Statistics from "./components/Statistics";
 import "./App.css";
 
-function App() {
+const App = () => {
   const [state, setState] = useState({
     good: 0,
     neutral: 0,
@@ -35,7 +35,7 @@ function App() {
     const { good } = state;
     const total = countTotalFeedback();
     if (total === 0) {
-      return "No feedback";
+      return "Brak opinii";
     }
     return Math.round((good / total) * 100) + "%";
   };
@@ -43,7 +43,7 @@ function App() {
   return (
     <>
       <Header handleReset={handleReset} />
-      <h1>Please leave feedback</h1>
+      <h1>Proszę zostawić opinię</h1>
       <FeedbackButtons handleFeedback={handleFeedback} />
       <Statistics
         state={state}
@@ -52,6 +52,6 @@ function App() {
       />
     </>
   );
-}
+};
 
 export default App;
