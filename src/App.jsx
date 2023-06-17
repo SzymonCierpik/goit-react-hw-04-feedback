@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import Header from "./components/Header";
 import FeedbackButtons from "./components/FeedbackButtons";
 import Statistics from "./components/Statistics";
@@ -53,5 +54,10 @@ const App = () => {
     </>
   );
 };
+
+App.propTypes = {
+  handleReset: PropTypes.func.isRequired,
+};
+
 
 export default App;
